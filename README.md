@@ -58,6 +58,7 @@ docker compose exec -T backend python -m scripts.seed_demo
 | 组件 | 实现 |
 |---|---|
 | 前端 | Nginx 与原生 HTML、CSS、JavaScript。`frontend/src/pages` 放页面，`components/common` 放共用表格、图表及表单。 |
+| 同步模拟台 | 无需登录与后端的纯前端协议演示，入口 `/sync.html`（代码见 `frontend/src/sync`，说明见其中 README），Node 测试：`node --test test/sync.test.js`。 |
 | API | Python 3.11、FastAPI、SQLAlchemy。`backend/src/domain` 放本项目字段、业务计算和演示数据，`routes` 放接口，`models` 放表模型。 |
 | 后台 | 独立 Python worker，通过 Redis 唤醒，从数据库租约领取计算，CSV 写入共享卷。 |
 | 数据 | MySQL 8 存储批次、运行与审计。`backend/scripts/seed_demo.py` 可安全重复执行。 |

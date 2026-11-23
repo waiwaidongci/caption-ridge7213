@@ -2,7 +2,7 @@ import {ROLE} from '../constants/enums.js';
 import {feedback, field} from '../components/common/fields.js';
 import {handler} from '../hooks/action.js';
 import {session} from '../stores/session.js';
-import {button, el, h, p} from '../utils/dom.js';
+import {button, el, h, link, p} from '../utils/dom.js';
 
 export function login(spec, refresh) {
   const error = feedback();
@@ -22,5 +22,7 @@ export function login(spec, refresh) {
     el('div', {class:'login-intro'}, p(spec.organization, 'eyeline'), h(1,spec.title), p(spec.subtitle,'intro-copy'),
       el('div', {class:'login-index'}, spec.pages.slice(1).map(label => el('span', {}, label)))),
     el('section', {class:'login-box'}, h(2,'登录工作台'), form,
-      el('div', {class:'test-roles'}, p('填入演示账号', 'subtle'), samples)));
+      el('div', {class:'test-roles'}, p('填入演示账号', 'subtle'), samples),
+      el('div', {class:'test-roles'}, p('无需账号即可体验', 'subtle'),
+        link('排班表增量同步模拟台 →', '/sync.html', {class:'quiet'}))));
 }

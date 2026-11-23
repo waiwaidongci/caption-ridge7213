@@ -1,0 +1,51 @@
+/* 增量同步模拟台页面样式（沿用全局设计变量） */
+
+.sync-shell { max-width: 1280px; margin: 0 auto; padding: clamp(1.1rem, 2.4vw, 2.4rem); display: grid; gap: 1.15rem; }
+.sync-top { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: .9rem; border-top: 5px solid var(--ink); padding-top: 1rem; }
+.sync-top .eyeline { font-weight: 700; letter-spacing: .14em; text-transform: uppercase; font-size: .78rem; color: var(--muted); }
+.sync-grid { display: grid; gap: 1.15rem; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); align-items: start; }
+@media (max-width: 980px) { .sync-grid { grid-template-columns: 1fr; } }
+.sync-panel { background: var(--panel); border: 1px solid var(--line); padding: clamp(.9rem, 1.4vw, 1.35rem); }
+.sync-panel h2 { font-size: 1.08rem; display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; }
+.sync-panel h3 { font-size: .98rem; margin-top: .9rem; }
+.sync-actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .8rem; }
+.sync-status-bar { display: flex; flex-wrap: wrap; gap: .55rem; align-items: center; margin-top: .7rem; }
+.kv { display: grid; grid-template-columns: auto 1fr; gap: .25rem .8rem; font-size: .92rem; }
+.kv dt { color: var(--muted); }
+.kv dd { margin: 0; font-variant-numeric: tabular-nums; }
+.syn-badge { display:inline-flex; align-items:center; gap:.35rem; padding:.28rem .7rem; font-weight:700; font-size:.9rem; border:1px solid var(--line); }
+.syn-badge[data-ok='1'] { background: oklch(90% .09 145); border-color: oklch(62% .12 145); }
+.syn-badge[data-ok='0'] { background: oklch(91% .09 65); border-color: oklch(60% .14 55); }
+.dot { width:.62rem; height:.62rem; border-radius:50%; background: currentColor; }
+.pill[data-state='unpublished'] { opacity:.72; }
+.pill[data-state='in-flight'] { background: oklch(90% .07 230); }
+.pill[data-state='needs-retry'] { background: oklch(88% .12 55); border-color: oklch(58% .15 50); }
+.pill[data-state='applied-unacked'] { background: oklch(90% .08 190); }
+.pill[data-state='synced'] { background: oklch(90% .09 145); }
+.pill[data-state='UPSERT'] { background: var(--accent-soft); }
+.pill[data-state='RETRACT'] { background: oklch(88% .12 30); }
+.pill[data-state='flying'], .pill[data-state='delayed'] { background: oklch(90% .07 230); }
+.pill[data-state='lost'] { background: oklch(88% .12 30); }
+.pill[data-state='delivered'] { background: oklch(90% .09 145); }
+.pill[data-state='pending'] { background: oklch(91% .09 65); }
+.pill[data-state='confirmed'] { background: oklch(90% .09 145); }
+table.sync { width:100%; border-collapse: collapse; font-size: .9rem; }
+table.sync th, table.sync td { padding: .45rem .5rem; border-bottom: 1px solid var(--line); text-align: left; vertical-align: middle; }
+table.sync th { font-size: .8rem; color: var(--muted); font-weight: 700; }
+table.sync td.num, table.sync th.num { text-align: right; font-variant-numeric: tabular-nums; }
+table.sync tr.row-missing { background: color-mix(in oklch, oklch(91% .09 65) 35%, transparent); }
+table.sync tr.row-extra { background: color-mix(in oklch, oklch(88% .12 30) 28%, transparent); }
+.switch-row { display:flex; flex-wrap:wrap; gap:.8rem; align-items:center; margin-top:.7rem; }
+.switch-row label { display:inline-flex; gap:.35rem; align-items:center; font-size:.92rem; }
+input.mini { width: 7.5rem; }
+.event-log { max-height: 260px; overflow: auto; border: 1px solid var(--line); background: color-mix(in oklch, var(--paper) 60%, var(--panel)); font-size: .82rem; }
+.event-log ol { margin: 0; padding-left: 1.6rem; }
+.event-log li { padding: .2rem .3rem; border-bottom: 1px dashed var(--line); font-variant-numeric: tabular-nums; }
+.event-log .ev-muted { color: var(--muted); }
+.two-col { display:grid; grid-template-columns: 1fr 1fr; gap:1rem; }
+@media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+.formline { display:flex; flex-wrap:wrap; gap:.5rem; align-items:end; margin-top:.6rem; }
+.formline label { display:grid; gap:.2rem; font-size:.85rem; color:var(--muted); }
+.formline input, .formline select { padding:.4rem .5rem; border:1px solid var(--line); background:var(--panel); min-width: 6rem; }
+.help { font-size: .86rem; color: var(--muted); }
+.back-link { font-weight:700; text-decoration:none; }

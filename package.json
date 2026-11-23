@@ -1,0 +1,10 @@
+{
+  "name": "caption-ridge-sync-sim",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "排班表增量同步模拟台（纯前端协议引擎与 Node 测试）",
+  "scripts": {
+    "test": "node --test test/"
+  }
+}
